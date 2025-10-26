@@ -20,7 +20,7 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="https://wa.me/5511999999999"
+                href="https://wa.me/5511980317304"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-start gap-4 p-4 bg-green-50 rounded-xl hover:bg-green-100 transition-colors group"
@@ -108,7 +108,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">LinkedIn</h4>
-                  <p className="text-sm text-gray-600">Ana Paula Silva</p>
+                  <p className="text-sm text-gray-600">Maria Iracelma</p>
                 </div>
               </a>
             </div>

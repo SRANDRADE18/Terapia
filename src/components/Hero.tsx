@@ -16,7 +16,7 @@ export default function Hero() {
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
             Espaço de Terapia Comunitária
-            <span className="block text-green-600 mt-2">Ana Paula Silva</span>
+            <span className="block text-green-600 mt-2">Maria Iracelma</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">

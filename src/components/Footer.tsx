@@ -12,8 +12,8 @@ export default function Footer() {
           <p className="text-gray-400 mb-4">Ana Paula Silva</p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm">
-            <a href="tel:+5511999999999" className="text-gray-300 hover:text-green-400 transition-colors">
-              (11) 99999-9999
+            <a href="tel:+5511980317304" className="text-gray-300 hover:text-green-400 transition-colors">
+              (11) 98031-7304
             </a>
             <span className="text-gray-600">•</span>
             <a href="mailto:contato@terapiacomunitaria.com.br" className="text-gray-300 hover:text-green-400 transition-colors">

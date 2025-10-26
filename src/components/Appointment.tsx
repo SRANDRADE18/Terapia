@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Send } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
+
+
+
 interface TimeSlot {
   id: string;
   day_of_week: number;
@@ -71,7 +74,7 @@ export default function Appointment() {
 
 Aguardo confirmação. Obrigado!`;
 
-    const whatsappNumber = '5511999999999';
+    const whatsappNumber = '55119980317304';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappUrl, '_blank');
@@ -178,7 +181,7 @@ Aguardo confirmação. Obrigado!`;
                       type="tel"
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(11) 99999-9999"
+                      placeholder="(11) 998031-7304"
                       className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors"
                     />
                   </div>

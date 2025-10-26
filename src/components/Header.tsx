@@ -30,7 +30,7 @@ export default function Header() {
             </div>
             <div className="text-left hidden sm:block">
               <h1 className="text-lg font-bold text-gray-800">Terapia Comunitária</h1>
-              <p className="text-xs text-gray-600">Ana Paula Silva</p>
+              <p className="text-xs text-gray-600">Maria Iracelma</p>
             </div>
           </button>
 

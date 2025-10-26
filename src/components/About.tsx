@@ -16,7 +16,7 @@ export default function About() {
             <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Minha História</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Sou Ana Paula Silva, terapeuta comunitária há mais de 10 anos. Minha jornada começou
+                Sou Maria Iracelma, terapeuta comunitária há mais de 10 anos. Minha jornada começou
                 quando percebi a necessidade de criar espaços de escuta e acolhimento na comunidade,
                 especialmente para aqueles que não têm acesso a cuidados emocionais.
               </p>

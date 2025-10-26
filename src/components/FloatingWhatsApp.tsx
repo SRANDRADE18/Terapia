@@ -5,7 +5,7 @@ export default function FloatingWhatsApp() {
 
   const handleClick = () => {
     const message = 'Olá! Gostaria de saber mais sobre os serviços de terapia comunitária.';
-    const whatsappNumber = '5511999999999';
+    const whatsappNumber = '5511980317304';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
