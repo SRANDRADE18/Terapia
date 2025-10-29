@@ -6,19 +6,19 @@ export default function Services() {
       icon: MessageCircle,
       title: 'Terapia Individual',
       description: 'Atendimento personalizado focado em suas necessidades emocionais, com escuta empática e técnicas terapêuticas adaptadas ao seu momento de vida.',
-      color: 'from-green-400 to-green-600'
+      color: 'from-rose-400 to-rose-500'
     },
     {
       icon: Users2,
       title: 'Terapia Comunitária',
       description: 'Rodas de conversa em grupo onde compartilhamos experiências, construímos vínculos e descobrimos juntos soluções para os desafios do dia a dia.',
-      color: 'from-blue-400 to-blue-600'
+      color: 'from-amber-400 to-amber-500'
     },
     {
       icon: Baby,
       title: 'Orientação Familiar',
       description: 'Apoio e orientação para famílias que buscam melhorar a comunicação, resolver conflitos e fortalecer os laços afetivos entre seus membros.',
-      color: 'from-purple-400 to-purple-600'
+      color: 'from-green-500 to-green-600'
     },
     {
       icon: Smile,
@@ -29,7 +29,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="py-16 px-4 bg-gradient-to-br from-gray-50 to-green-50">
+    <section id="servicos" className="py-16 px-4 bg-gradient-to-br from-rose-50 to-amber-50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
@@ -39,7 +39,7 @@ export default function Services() {
             Escolha a modalidade que melhor se adapta às suas necessidades.
             Estou aqui para acolher você.
           </p>
-          <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mt-4"></div>
+          <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full mt-4"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -70,7 +70,7 @@ export default function Services() {
           </h3>
           <div className="grid md:grid-cols-3 gap-6 text-left">
             <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-8 h-8 bg-rose-400 text-white rounded-full flex items-center justify-center font-bold">
                 1
               </div>
               <div>
@@ -79,7 +79,7 @@ export default function Services() {
               </div>
             </div>
             <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-8 h-8 bg-amber-500 text-white rounded-full flex items-center justify-center font-bold">
                 2
               </div>
               <div>
@@ -88,7 +88,7 @@ export default function Services() {
               </div>
             </div>
             <div className="flex gap-3">
-              <div className="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center font-bold">
+              <div className="flex-shrink-0 w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">
                 3
               </div>
               <div>

@@ -1,4 +1,3 @@
-import { Heart } from 'lucide-react';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -7,16 +6,20 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 pt-20 pb-16 px-4">
+    <section className="relative bg-gradient-to-br from-rose-50 via-amber-50 to-green-50 pt-20 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-lg mb-6">
-            <Heart className="w-10 h-10 text-green-500" />
+          <div className="mb-8">
+            <img
+              src="/image.png"
+              alt="Florescer Integrativo"
+              className="h-32 w-auto mx-auto mb-4"
+            />
           </div>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6">
-            Espaço de Terapia Comunitária
-            <span className="block text-green-600 mt-2">Maria Iracelma</span>
+            Bem-vindo ao
+            <span className="block text-rose-400 mt-2">Florescer Integrativo</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -27,7 +30,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
               onClick={() => scrollToSection('agendamento')}
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
+              className="bg-rose-400 hover:bg-rose-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
             >
               Agendar Consulta
             </button>

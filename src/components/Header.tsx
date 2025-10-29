@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Heart, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +23,16 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Heart className="w-6 h-6 text-white" />
-            </div>
+            <img
+              src="/image.png"
+              alt="Florescer Integrativo"
+              className="h-12 w-auto group-hover:scale-105 transition-transform"
+            />
             <div className="text-left hidden sm:block">
-              <h1 className="text-lg font-bold text-gray-800">Terapia Comunitária</h1>
-              <p className="text-xs text-gray-600">Maria Iracelma</p>
+              <h1 className="text-lg font-bold text-gray-800">Florescer Integrativo</h1>
+              <p className="text-xs text-gray-600">Terapia Comunitária</p>
             </div>
           </button>
 
@@ -39,7 +41,7 @@ export default function Header() {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="px-4 py-2 text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg font-medium transition-colors"
+                className="px-4 py-2 text-gray-700 hover:text-rose-400 hover:bg-rose-50 rounded-lg font-medium transition-colors"
               >
                 {item.label}
               </button>
@@ -48,7 +50,7 @@ export default function Header() {
 
           <button
             onClick={() => scrollToSection('agendamento')}
-            className="hidden md:block bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-full transition-all transform hover:scale-105"
+            className="hidden md:block bg-rose-400 hover:bg-rose-500 text-white font-semibold px-6 py-2 rounded-full transition-all transform hover:scale-105"
           >
             Agendar Consulta
           </button>
@@ -68,14 +70,14 @@ export default function Header() {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="px-4 py-3 text-left text-gray-700 hover:text-green-600 hover:bg-green-50 rounded-lg font-medium transition-colors"
+                  className="px-4 py-3 text-left text-gray-700 hover:text-rose-400 hover:bg-rose-50 rounded-lg font-medium transition-colors"
                 >
                   {item.label}
                 </button>
               ))}
               <button
                 onClick={() => scrollToSection('agendamento')}
-                className="mt-2 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-full text-center transition-all"
+                className="mt-2 bg-rose-400 hover:bg-rose-500 text-white font-semibold px-6 py-3 rounded-full text-center transition-all"
               >
                 Agendar Consulta
               </button>

@@ -19,7 +19,7 @@ export default function FloatingWhatsApp() {
       aria-label="Conversar no WhatsApp"
     >
       <div className="relative">
-        <div className="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 animate-pulse hover:animate-none">
+        <div className="w-16 h-16 bg-rose-400 hover:bg-rose-500 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 animate-pulse hover:animate-none">
           <svg
             className="w-9 h-9 text-white"
             fill="currentColor"
@@ -36,7 +36,7 @@ export default function FloatingWhatsApp() {
           </div>
         )}
 
-        <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
+        <div className="absolute inset-0 bg-rose-300 rounded-full animate-ping opacity-75"></div>
       </div>
     </button>
   );

@@ -8,15 +8,15 @@ export default function About() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
             Sobre Mim e Meu Trabalho
           </h2>
-          <div className="w-20 h-1 bg-green-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full"></div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-rose-100 to-amber-100 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Minha História</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Sou Maria Iracelma, terapeuta comunitária há mais de 10 anos. Minha jornada começou
+                Com anos de dedicação à terapia comunitária, minha jornada começou
                 quando percebi a necessidade de criar espaços de escuta e acolhimento na comunidade,
                 especialmente para aqueles que não têm acesso a cuidados emocionais.
               </p>
@@ -29,7 +29,7 @@ export default function About() {
           </div>
 
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-purple-100 to-pink-100 rounded-2xl p-8 shadow-lg">
+            <div className="bg-gradient-to-br from-green-100 to-lime-100 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-gray-800 mb-4">Minha Missão</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Promover saúde mental e bem-estar através de práticas terapêuticas acessíveis,
@@ -45,8 +45,8 @@ export default function About() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center p-6 bg-green-50 rounded-xl">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-500 rounded-full mb-4">
+          <div className="text-center p-6 bg-rose-50 rounded-xl">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-rose-400 rounded-full mb-4">
               <Users className="w-8 h-8 text-white" />
             </div>
             <h4 className="text-xl font-bold text-gray-800 mb-2">Projeto Social</h4>
@@ -56,8 +56,8 @@ export default function About() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-blue-50 rounded-xl">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-500 rounded-full mb-4">
+          <div className="text-center p-6 bg-amber-50 rounded-xl">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-4">
               <Target className="w-8 h-8 text-white" />
             </div>
             <h4 className="text-xl font-bold text-gray-800 mb-2">Atendimento Individual</h4>
@@ -67,8 +67,8 @@ export default function About() {
             </p>
           </div>
 
-          <div className="text-center p-6 bg-purple-50 rounded-xl">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-500 rounded-full mb-4">
+          <div className="text-center p-6 bg-green-50 rounded-xl">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-4">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
             <h4 className="text-xl font-bold text-gray-800 mb-2">Grupos de Apoio</h4>

@@ -2,9 +2,6 @@ import { useState, useEffect } from 'react';
 import { Calendar, Clock, User, Phone, Send } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
-
-
-
 interface TimeSlot {
   id: string;
   day_of_week: number;
@@ -90,20 +87,20 @@ Aguardo confirmação. Obrigado!`;
           <p className="text-lg text-gray-600">
             Escolha o melhor dia e horário para você. É rápido e fácil!
           </p>
-          <div className="w-20 h-1 bg-green-500 mx-auto rounded-full mt-4"></div>
+          <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full mt-4"></div>
         </div>
 
-        <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-2xl shadow-xl p-8">
+        <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl shadow-xl p-8">
           {loading ? (
             <div className="text-center py-8">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-green-500 border-t-transparent"></div>
+              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-rose-400 border-t-transparent"></div>
               <p className="mt-4 text-gray-600">Carregando horários disponíveis...</p>
             </div>
           ) : (
             <div className="space-y-6">
               <div>
                 <label className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
-                  <Calendar className="w-5 h-5 text-green-600" />
+                  <Calendar className="w-5 h-5 text-rose-400" />
                   Escolha o dia da semana
                 </label>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
@@ -116,8 +113,8 @@ Aguardo confirmação. Obrigado!`;
                       }}
                       className={`p-4 rounded-xl font-medium transition-all ${
                         selectedDay === day.value
-                          ? 'bg-green-600 text-white shadow-lg scale-105'
-                          : 'bg-white text-gray-700 hover:bg-green-100'
+                          ? 'bg-rose-400 text-white shadow-lg scale-105'
+                          : 'bg-white text-gray-700 hover:bg-rose-100'
                       }`}
                     >
                       {day.label}
@@ -129,7 +126,7 @@ Aguardo confirmação. Obrigado!`;
               {selectedDay && (
                 <div>
                   <label className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
-                    <Clock className="w-5 h-5 text-blue-600" />
+                    <Clock className="w-5 h-5 text-amber-500" />
                     Escolha o horário
                   </label>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
@@ -140,8 +137,8 @@ Aguardo confirmação. Obrigado!`;
                           onClick={() => setSelectedTime(time)}
                           className={`p-3 rounded-xl font-medium transition-all ${
                             selectedTime === time
-                              ? 'bg-blue-600 text-white shadow-lg scale-105'
-                              : 'bg-white text-gray-700 hover:bg-blue-100'
+                              ? 'bg-amber-500 text-white shadow-lg scale-105'
+                              : 'bg-white text-gray-700 hover:bg-amber-100'
                           }`}
                         >
                           {time}
@@ -160,7 +157,7 @@ Aguardo confirmação. Obrigado!`;
                 <div className="space-y-4 pt-4">
                   <div>
                     <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                      <User className="w-5 h-5 text-purple-600" />
+                      <User className="w-5 h-5 text-green-600" />
                       Seu nome completo
                     </label>
                     <input
@@ -168,13 +165,13 @@ Aguardo confirmação. Obrigado!`;
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="Digite seu nome"
-                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors"
+                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-green-600 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <div>
                     <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                      <Phone className="w-5 h-5 text-purple-600" />
+                      <Phone className="w-5 h-5 text-green-600" />
                       Seu telefone
                     </label>
                     <input
@@ -182,13 +179,13 @@ Aguardo confirmação. Obrigado!`;
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder="(11) 998031-7304"
-                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition-colors"
+                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-green-600 focus:outline-none transition-colors"
                     />
                   </div>
 
                   <button
                     onClick={handleConfirm}
-                    className="w-full bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-rose-400 to-amber-500 hover:from-rose-500 hover:to-amber-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
                     Confirmar pelo WhatsApp
@@ -199,7 +196,7 @@ Aguardo confirmação. Obrigado!`;
           )}
         </div>
 
-        <div className="mt-8 text-center bg-blue-50 rounded-xl p-6">
+        <div className="mt-8 text-center bg-amber-50 rounded-xl p-6">
           <p className="text-gray-700">
             <span className="font-semibold">Importante:</span> Ao confirmar, você será redirecionado ao WhatsApp
             para finalizar seu agendamento. Respondo em até 24 horas!
