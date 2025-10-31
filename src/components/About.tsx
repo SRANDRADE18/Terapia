@@ -1,4 +1,4 @@
-import { Users, Target, Sparkles } from 'lucide-react';
+import { Users, Target, Sparkles } from "lucide-react";
 
 export default function About() {
   return (
@@ -14,31 +14,46 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-rose-100 to-amber-100 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Minha História</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Resumo Profissional – Práticas Integrativas e Complementares
+              </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Com anos de dedicação à terapia comunitária, minha jornada começou
-                quando percebi a necessidade de criar espaços de escuta e acolhimento na comunidade,
-                especialmente para aqueles que não têm acesso a cuidados emocionais.
+                Profissional da área da saúde com experiência em Práticas
+                Integrativas e Complementares, atuando na promoção do bem-estar
+                físico, emocional e espiritual por meio de abordagens que
+                valorizam o cuidado integral do ser humano. Desenvolve
+                atividades terapêuticas voltadas à escuta, acolhimento e
+                fortalecimento dos vínculos comunitários, com foco na Terapia
+                Comunitária Integrativa, auriculoterapia, meditação, relaxamento
+                guiado e práticas de autocuidado.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Acredito que todos merecem ser ouvidos, compreendidos e apoiados em suas dificuldades.
-                A terapia comunitária é um instrumento poderoso de transformação social e pessoal,
-                que valoriza a força e a sabedoria de cada pessoa.
+                Com trajetória dedicada à humanização do cuidado e à saúde
+                coletiva, integra saberes tradicionais e científicos,
+                estimulando o protagonismo do indivíduo no próprio processo de
+                cura. Atua com grupos comunitários, população em situação de
+                rua, adolescentes e empresas, promovendo espaços de partilha,
+                reflexão e integração corpo-mente-espírito.
               </p>
             </div>
           </div>
 
           <div className="space-y-6">
             <div className="bg-gradient-to-br from-green-100 to-lime-100 rounded-2xl p-8 shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Minha Missão</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                Minha Missão
+              </h3>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Promover saúde mental e bem-estar através de práticas terapêuticas acessíveis,
-                humanizadas e inclusivas. Construir redes de apoio e fortalecer os vínculos
-                comunitários.
+                Promover o bem-estar integral das pessoas por meio de práticas
+                terapêuticas e integrativas, fortalecendo o autocuidado, os
+                vínculos humanos e o sentido de pertencimento através do afeto e
+                da escuta.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Cada sessão é um espaço seguro onde você pode compartilhar suas vivências,
-                encontrar acolhimento e descobrir novos caminhos para lidar com os desafios da vida.
+                Ser reconhecido como um espaço de referência em acolhimento e
+                promoção de saúde integral, inspirando pessoas e comunidades a
+                florescerem emocionalmente e espiritualmente por meio do
+                encontro humano e da consciência afetiva.
               </p>
             </div>
           </div>
@@ -49,10 +64,12 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-rose-400 rounded-full mb-4">
               <Users className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-xl font-bold text-gray-800 mb-2">Projeto Social</h4>
+            <h4 className="text-xl font-bold text-gray-800 mb-2">
+              Projeto Social
+            </h4>
             <p className="text-gray-600">
-              Rodas de terapia comunitária gratuitas mensais para fortalecer laços e promover
-              saúde mental coletiva.
+              Rodas de terapia comunitária gratuitas mensais para fortalecer
+              laços e promover saúde mental coletiva.
             </p>
           </div>
 
@@ -60,10 +77,12 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-full mb-4">
               <Target className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-xl font-bold text-gray-800 mb-2">Atendimento Individual</h4>
+            <h4 className="text-xl font-bold text-gray-800 mb-2">
+              Atendimento Individual
+            </h4>
             <p className="text-gray-600">
-              Sessões personalizadas com escuta ativa, empatia e técnicas terapêuticas eficazes
-              para seu momento.
+              Sessões personalizadas com escuta ativa, empatia e técnicas
+              terapêuticas eficazes para seu momento.
             </p>
           </div>
 
@@ -71,10 +90,12 @@ export default function About() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-green-600 rounded-full mb-4">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            <h4 className="text-xl font-bold text-gray-800 mb-2">Grupos de Apoio</h4>
+            <h4 className="text-xl font-bold text-gray-800 mb-2">
+              Grupos de Apoio
+            </h4>
             <p className="text-gray-600">
-              Encontros em grupo para compartilhar experiências, aprender coletivamente e
-              construir resiliência.
+              Encontros em grupo para compartilhar experiências, aprender
+              coletivamente e construir resiliência.
             </p>
           </div>
         </div>
