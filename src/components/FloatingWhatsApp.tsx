@@ -19,9 +19,9 @@ export default function FloatingWhatsApp() {
       aria-label="Conversar no WhatsApp"
     >
       <div className="relative">
-        <div className="w-16 h-16 bg-rose-400 hover:bg-rose-500 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 animate-pulse hover:animate-none">
+        <div className="w-16 h-16 bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 shadow-green-500/20">
           <svg
-            className="w-9 h-9 text-white"
+            className="w-10 h-10 text-white"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -30,13 +30,13 @@ export default function FloatingWhatsApp() {
         </div>
 
         {isHovered && (
-          <div className="absolute bottom-full right-0 mb-2 w-48 bg-gray-900 text-white text-sm py-2 px-4 rounded-lg shadow-lg">
+          <div className="absolute bottom-full right-0 mb-4 w-48 bg-gray-900 text-white text-sm py-3 px-4 rounded-xl shadow-2xl animate-in fade-in slide-in-from-bottom-2 duration-300">
             Fale comigo no WhatsApp
             <div className="absolute top-full right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gray-900"></div>
           </div>
         )}
 
-        <div className="absolute inset-0 bg-rose-300 rounded-full animate-ping opacity-75"></div>
+        <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-20"></div>
       </div>
     </button>
   );

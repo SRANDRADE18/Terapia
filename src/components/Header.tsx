@@ -28,7 +28,7 @@ export default function Header() {
             <img
               src="/image.png"
               alt="Florescer Integrativo"
-              className="h-12 w-auto group-hover:scale-105 transition-transform"
+              className="h-16 w-auto group-hover:scale-105 transition-transform"
             />
             <div className="text-left hidden sm:block">
               <h1 className="text-lg font-bold text-gray-800">Florescer Integrativo</h1>

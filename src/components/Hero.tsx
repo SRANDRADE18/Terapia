@@ -6,14 +6,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative bg-gradient-to-br from-rose-50 via-amber-50 to-green-50 pt-20 pb-16 px-4">
+    <section className="relative bg-gradient-to-br from-rose-50 via-amber-50 to-green-50 pt-32 pb-16 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center">
-          <div className="mb-8">
+          <div className="mt-8 mb-8">
             <img
               src="/image.png"
               alt="Florescer Integrativo"
-              className="h-32 w-auto mx-auto mb-4"
+              className="h-48 w-auto mx-auto mb-4"
             />
           </div>
 

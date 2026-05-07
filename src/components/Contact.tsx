@@ -32,7 +32,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">WhatsApp</h4>
-                  <p className="text-gray-600">(11) 99999-9999</p>
+                  <p className="text-gray-600">(11) 98031-7304</p>
                   <p className="text-sm text-rose-400 mt-1">Clique para conversar</p>
                 </div>
               </a>

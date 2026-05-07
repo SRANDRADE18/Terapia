@@ -1,29 +1,20 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, User, Phone, Send } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, Send, ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 
 interface TimeSlot {
   id: string;
-  day_of_week: number;
+  slot_date: string;
   time_slot: string;
   is_available: boolean;
 }
 
 export default function Appointment() {
-  const [selectedDay, setSelectedDay] = useState<number | null>(null);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string>('');
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [loading, setLoading] = useState(false);
-
-  const daysOfWeek = [
-    { value: 1, label: 'Segunda-feira' },
-    { value: 2, label: 'Terça-feira' },
-    { value: 3, label: 'Quarta-feira' },
-    { value: 4, label: 'Quinta-feira' },
-    { value: 5, label: 'Sexta-feira' }
-  ];
+  const [currentMonth, setCurrentMonth] = useState(new Date());
 
   useEffect(() => {
     loadSlots();
@@ -36,7 +27,7 @@ export default function Appointment() {
         .from('appointment_slots')
         .select('*')
         .eq('is_available', true)
-        .order('day_of_week', { ascending: true })
+        .order('slot_date', { ascending: true })
         .order('time_slot', { ascending: true });
 
       if (error) throw error;
@@ -48,159 +39,154 @@ export default function Appointment() {
     }
   };
 
-  const getTimesForDay = (day: number) => {
+  const uniqueAvailableDates = new Set(availableSlots.map(slot => slot.slot_date));
+
+  const getTimesForDate = (date: string) => {
     return availableSlots
-      .filter(slot => slot.day_of_week === day)
+      .filter(slot => slot.slot_date === date)
       .map(slot => slot.time_slot);
   };
 
-  const handleConfirm = () => {
-    if (!selectedDay || !selectedTime || !name || !phone) {
-      alert('Por favor, preencha todos os campos');
-      return;
+  const formatDateLabel = (dateStr: string) => {
+    const date = new Date(dateStr + 'T00:00:00');
+    return new Intl.DateTimeFormat('pt-BR', {
+      weekday: 'long',
+      day: '2-digit',
+      month: 'long'
+    }).format(date);
+  };
+
+  // Funções do Calendário
+  const daysInMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+  const firstDayOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+
+  const prevMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() - 1));
+  const nextMonth = () => setCurrentMonth(new Date(currentMonth.getFullYear(), currentMonth.getMonth() + 1));
+
+  const renderCalendar = () => {
+    const totalDays = daysInMonth(currentMonth);
+    const startDay = firstDayOfMonth(currentMonth);
+    const days = [];
+
+    // Espaços vazios antes do primeiro dia
+    for (let i = 0; i < startDay; i++) {
+      days.push(<div key={`empty-${i}`} className="h-12"></div>);
     }
 
-    const dayName = daysOfWeek.find(d => d.value === selectedDay)?.label || '';
+    for (let d = 1; d <= totalDays; d++) {
+      const dateObj = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), d);
+      const dateStr = dateObj.toISOString().split('T')[0];
+      const hasSlots = uniqueAvailableDates.has(dateStr);
+      const isSelected = selectedDate === dateStr;
+      const isPast = dateObj < new Date(new Date().setHours(0,0,0,0));
 
-    const message = `Olá! Gostaria de agendar uma consulta.
+      days.push(
+        <button
+          key={d}
+          disabled={!hasSlots || isPast}
+          onClick={() => {
+            setSelectedDate(dateStr);
+            setSelectedTime('');
+          }}
+          className={`h-12 w-full rounded-lg flex flex-col items-center justify-center transition-all relative
+            ${isSelected ? 'bg-rose-400 text-white shadow-lg z-10' : ''}
+            ${hasSlots && !isSelected && !isPast ? 'hover:bg-rose-50 text-gray-800' : 'text-gray-300 pointer-events-none'}
+          `}
+        >
+          <span className="font-medium">{d}</span>
+          {hasSlots && !isSelected && !isPast && (
+            <span className="absolute bottom-1 w-1 h-1 bg-rose-400 rounded-full"></span>
+          )}
+        </button>
+      );
+    }
+    return days;
+  };
 
-*Nome:* ${name}
-*Telefone:* ${phone}
-*Dia:* ${dayName}
-*Horário:* ${selectedTime}
-
-Aguardo confirmação. Obrigado!`;
-
-    const whatsappNumber = '55119980317304';
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappUrl, '_blank');
+  const handleConfirm = () => {
+    if (!selectedDate || !selectedTime) return;
+    const msg = `Olá! Gostaria de agendar uma consulta para ${formatDateLabel(selectedDate)} às ${selectedTime}.`;
+    window.open(`https://wa.me/5511980317304?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
     <section id="agendamento" className="py-16 px-4 bg-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Agende Sua Consulta
-          </h2>
-          <p className="text-lg text-gray-600">
-            Escolha o melhor dia e horário para você. É rápido e fácil!
-          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Agende Sua Consulta</h2>
+          <p className="text-lg text-gray-600">Selecione uma data no calendário para ver os horários.</p>
           <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full mt-4"></div>
         </div>
 
-        <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl shadow-xl p-8">
-          {loading ? (
-            <div className="text-center py-8">
-              <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-rose-400 border-t-transparent"></div>
-              <p className="mt-4 text-gray-600">Carregando horários disponíveis...</p>
+        <div className="grid md:grid-cols-2 gap-8 items-start">
+          {/* Coluna do Calendário */}
+          <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-xl font-bold text-gray-800 capitalize">
+                {new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' }).format(currentMonth)}
+              </h3>
+              <div className="flex gap-2">
+                <button onClick={prevMonth} className="p-2 hover:bg-gray-100 rounded-full transition-colors"><ChevronLeft /></button>
+                <button onClick={nextMonth} className="p-2 hover:bg-gray-100 rounded-full transition-colors"><ChevronRight /></button>
+              </div>
             </div>
-          ) : (
-            <div className="space-y-6">
-              <div>
-                <label className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
-                  <Calendar className="w-5 h-5 text-rose-400" />
-                  Escolha o dia da semana
-                </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-                  {daysOfWeek.map(day => (
+
+            <div className="grid grid-cols-7 gap-1 text-center mb-2">
+              {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map(d => (
+                <div key={d} className="text-xs font-bold text-gray-400 py-2">{d}</div>
+              ))}
+            </div>
+            <div className="grid grid-cols-7 gap-1">
+              {renderCalendar()}
+            </div>
+          </div>
+
+          {/* Coluna de Horários */}
+          <div className="bg-gradient-to-br from-rose-50 to-amber-50 rounded-2xl shadow-xl p-8 min-h-[400px]">
+            {loading ? (
+              <div className="flex flex-col items-center justify-center h-full">
+                <div className="animate-spin rounded-full h-12 w-12 border-4 border-rose-400 border-t-transparent"></div>
+              </div>
+            ) : selectedDate ? (
+              <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                <div className="flex items-center gap-2 text-gray-700 font-bold text-lg mb-4">
+                  <Clock className="w-5 h-5 text-rose-400" />
+                  Horários para <span className="capitalize">{formatDateLabel(selectedDate).split('-')[0]}</span>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-3">
+                  {getTimesForDate(selectedDate).map(time => (
                     <button
-                      key={day.value}
-                      onClick={() => {
-                        setSelectedDay(day.value);
-                        setSelectedTime('');
-                      }}
-                      className={`p-4 rounded-xl font-medium transition-all ${
-                        selectedDay === day.value
+                      key={time}
+                      onClick={() => setSelectedTime(time)}
+                      className={`p-3 rounded-xl font-medium transition-all ${
+                        selectedTime === time
                           ? 'bg-rose-400 text-white shadow-lg scale-105'
-                          : 'bg-white text-gray-700 hover:bg-rose-100'
+                          : 'bg-white text-gray-700 hover:bg-rose-100 border border-gray-200'
                       }`}
                     >
-                      {day.label}
+                      {time}
                     </button>
                   ))}
                 </div>
-              </div>
 
-              {selectedDay && (
-                <div>
-                  <label className="flex items-center gap-2 text-gray-700 font-semibold mb-3">
-                    <Clock className="w-5 h-5 text-amber-500" />
-                    Escolha o horário
-                  </label>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
-                    {getTimesForDay(selectedDay).length > 0 ? (
-                      getTimesForDay(selectedDay).map(time => (
-                        <button
-                          key={time}
-                          onClick={() => setSelectedTime(time)}
-                          className={`p-3 rounded-xl font-medium transition-all ${
-                            selectedTime === time
-                              ? 'bg-amber-500 text-white shadow-lg scale-105'
-                              : 'bg-white text-gray-700 hover:bg-amber-100'
-                          }`}
-                        >
-                          {time}
-                        </button>
-                      ))
-                    ) : (
-                      <p className="col-span-full text-gray-500 text-center py-4">
-                        Nenhum horário disponível para este dia
-                      </p>
-                    )}
-                  </div>
-                </div>
-              )}
-
-              {selectedTime && (
-                <div className="space-y-4 pt-4">
-                  <div>
-                    <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                      <User className="w-5 h-5 text-green-600" />
-                      Seu nome completo
-                    </label>
-                    <input
-                      type="text"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      placeholder="Digite seu nome"
-                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-green-600 focus:outline-none transition-colors"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="flex items-center gap-2 text-gray-700 font-semibold mb-2">
-                      <Phone className="w-5 h-5 text-green-600" />
-                      Seu telefone
-                    </label>
-                    <input
-                      type="tel"
-                      value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      placeholder="(11) 998031-7304"
-                      className="w-full p-4 rounded-xl border-2 border-gray-200 focus:border-green-600 focus:outline-none transition-colors"
-                    />
-                  </div>
-
+                {selectedTime && (
                   <button
                     onClick={handleConfirm}
-                    className="w-full bg-gradient-to-r from-rose-400 to-amber-500 hover:from-rose-500 hover:to-amber-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+                    className="w-full mt-8 bg-gradient-to-r from-rose-400 to-amber-500 hover:from-rose-500 hover:to-amber-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
                   >
                     <Send className="w-5 h-5" />
-                    Confirmar pelo WhatsApp
+                    Confirmar no WhatsApp
                   </button>
-                </div>
-              )}
-            </div>
-          )}
-        </div>
-
-        <div className="mt-8 text-center bg-amber-50 rounded-xl p-6">
-          <p className="text-gray-700">
-            <span className="font-semibold">Importante:</span> Ao confirmar, você será redirecionado ao WhatsApp
-            para finalizar seu agendamento. Respondo em até 24 horas!
-          </p>
+                )}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-full text-center text-gray-500">
+                <CalendarIcon className="w-16 h-16 mb-4 opacity-20" />
+                <p>Selecione um dia com o ponto rosa para ver os horários disponíveis.</p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </section>
