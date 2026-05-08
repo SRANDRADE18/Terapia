@@ -4,7 +4,7 @@ export default function FloatingWhatsApp() {
   const [isHovered, setIsHovered] = useState(false);
 
   const handleClick = () => {
-    const message = 'Olá! Gostaria de saber mais sobre os serviços de terapia comunitária.';
+    const message = 'Olá! Gostaria de saber mais sobre os serviços de terapia comunitária integrativa.';
     const whatsappNumber = '5511980317304';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');

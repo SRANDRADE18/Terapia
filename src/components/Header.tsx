@@ -32,7 +32,7 @@ export default function Header() {
             />
             <div className="text-left hidden sm:block">
               <h1 className="text-lg font-bold text-gray-800">Florescer Integrativo</h1>
-              <p className="text-xs text-gray-600">Terapia Comunitária</p>
+              <p className="text-xs text-gray-600">Terapia Comunitária Integrativa</p>
             </div>
           </button>
 
@@ -52,7 +52,7 @@ export default function Header() {
             onClick={() => scrollToSection('agendamento')}
             className="hidden md:block bg-rose-400 hover:bg-rose-500 text-white font-semibold px-6 py-2 rounded-full transition-all transform hover:scale-105"
           >
-            Agendar Consulta
+            Agendar Avaliação
           </button>
 
           <button
@@ -79,7 +79,7 @@ export default function Header() {
                 onClick={() => scrollToSection('agendamento')}
                 className="mt-2 bg-rose-400 hover:bg-rose-500 text-white font-semibold px-6 py-3 rounded-full text-center transition-all"
               >
-                Agendar Consulta
+                Agendar Avaliação
               </button>
             </nav>
           </div>

@@ -11,7 +11,7 @@ export default function Footer() {
             />
           </div>
           <h3 className="text-xl font-bold mb-2">Florescer Integrativo</h3>
-          <p className="text-gray-400 mb-4">Terapia Comunitária</p>
+          <p className="text-gray-400 mb-4">Terapia Comunitária Integrativa</p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-6 text-sm">
             <a href="tel:+5511980317304" className="text-gray-300 hover:text-rose-400 transition-colors">

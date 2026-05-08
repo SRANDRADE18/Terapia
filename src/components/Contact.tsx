@@ -93,12 +93,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Facebook</h4>
-                  <p className="text-sm text-gray-600">Terapia Comunitária</p>
+                  <p className="text-sm text-gray-600">Terapia Comunitária Integrativa</p>
                 </div>
               </a>
 
               <a
-                href="https://linkedin.com/in/anapaulasilva"
+                href="https://www.linkedin.com/in/maria-iracelma-santos/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors group"

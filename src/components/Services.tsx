@@ -10,7 +10,7 @@ export default function Services() {
     },
     {
       icon: Users2,
-      title: 'Terapia Comunitária',
+      title: 'Terapia Comunitária Integrativa',
       description: 'Rodas de conversa em grupo onde compartilhamos experiências, construímos vínculos e descobrimos juntos soluções para os desafios do dia a dia.',
       color: 'from-amber-400 to-amber-500'
     },
@@ -74,7 +74,7 @@ export default function Services() {
                 1
               </div>
               <div>
-                <h4 className="font-semibold text-gray-800 mb-1">Agende sua consulta</h4>
+                <h4 className="font-semibold text-gray-800 mb-1">Agende sua avaliação</h4>
                 <p className="text-sm text-gray-600">Escolha um horário disponível que funcione para você</p>
               </div>
             </div>

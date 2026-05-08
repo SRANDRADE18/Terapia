@@ -68,7 +68,7 @@ export default function About() {
               Projeto Social
             </h4>
             <p className="text-gray-600">
-              Rodas de terapia comunitária gratuitas mensais para fortalecer
+              Rodas de terapia comunitária integrativa gratuitas mensais para fortalecer
               laços e promover saúde mental coletiva.
             </p>
           </div>
