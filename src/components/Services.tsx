@@ -1,11 +1,11 @@
-import { MessageCircle, Users2, Baby, Smile } from 'lucide-react';
+import { MessageCircle, Users2, Baby, Smile, Ear } from 'lucide-react';
 
 export default function Services() {
   const services = [
     {
-      icon: MessageCircle,
-      title: 'Terapia Individual',
-      description: 'Atendimento personalizado focado em suas necessidades emocionais, com escuta empática e técnicas terapêuticas adaptadas ao seu momento de vida.',
+      icon: Ear,
+      title: 'Auriculoterapia',
+      description: 'Técnica integrativa que estimula pontos específicos da orelha para promover o bem-estar físico e emocional, auxiliando no alívio de dores, estresse e ansiedade.',
       color: 'from-rose-400 to-rose-500'
     },
     {

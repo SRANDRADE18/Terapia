@@ -12,6 +12,14 @@ interface TimeSlot {
 export default function Appointment() {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedTime, setSelectedTime] = useState<string>('');
+  const [selectedService, setSelectedService] = useState<string>('');
+
+  const servicesList = [
+    'Auriculoterapia',
+    'Terapia Comunitária Integrativa',
+    'Orientação Familiar',
+    'Grupos de Apoio'
+  ];
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [loading, setLoading] = useState(false);
   const [currentMonth, setCurrentMonth] = useState(new Date());
@@ -31,7 +39,31 @@ export default function Appointment() {
         .order('time_slot', { ascending: true });
 
       if (error) throw error;
-      setAvailableSlots(data || []);
+      
+      // Se não houver dados no banco, injetamos dados de teste para você poder visualizar
+      if (!data || data.length === 0) {
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const dayAfter = new Date(today);
+        dayAfter.setDate(dayAfter.getDate() + 2);
+        const nextWeek = new Date(today);
+        nextWeek.setDate(nextWeek.getDate() + 5);
+
+        const mockData = [
+          { id: '1', slot_date: tomorrow.toISOString().split('T')[0], time_slot: '09:00', is_available: true },
+          { id: '2', slot_date: tomorrow.toISOString().split('T')[0], time_slot: '10:30', is_available: true },
+          { id: '3', slot_date: tomorrow.toISOString().split('T')[0], time_slot: '14:00', is_available: true },
+          { id: '4', slot_date: dayAfter.toISOString().split('T')[0], time_slot: '11:00', is_available: true },
+          { id: '5', slot_date: dayAfter.toISOString().split('T')[0], time_slot: '16:00', is_available: true },
+          { id: '6', slot_date: nextWeek.toISOString().split('T')[0], time_slot: '08:00', is_available: true },
+          { id: '7', slot_date: nextWeek.toISOString().split('T')[0], time_slot: '13:00', is_available: true },
+        ];
+        setAvailableSlots(mockData);
+      } else {
+        setAvailableSlots(data);
+      }
+
     } catch (error) {
       console.error('Erro ao carregar horários:', error);
     } finally {
@@ -87,6 +119,7 @@ export default function Appointment() {
           onClick={() => {
             setSelectedDate(dateStr);
             setSelectedTime('');
+            setSelectedService('');
           }}
           className={`h-12 w-full rounded-lg flex flex-col items-center justify-center transition-all relative
             ${isSelected ? 'bg-rose-400 text-white shadow-lg z-10' : ''}
@@ -104,8 +137,8 @@ export default function Appointment() {
   };
 
   const handleConfirm = () => {
-    if (!selectedDate || !selectedTime) return;
-    const msg = `Olá! Gostaria de agendar uma avaliação para ${formatDateLabel(selectedDate)} às ${selectedTime}.`;
+    if (!selectedDate || !selectedTime || !selectedService) return;
+    const msg = `Olá! Gostaria de agendar uma sessão de ${selectedService} para ${formatDateLabel(selectedDate)} às ${selectedTime}.`;
     window.open(`https://wa.me/5511980317304?text=${encodeURIComponent(msg)}`, '_blank');
   };
 
@@ -149,31 +182,50 @@ export default function Appointment() {
               </div>
             ) : selectedDate ? (
               <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-                <div className="flex items-center gap-2 text-gray-700 font-bold text-lg mb-4">
+                <div className="flex items-center gap-2 text-gray-700 font-bold text-lg mb-2">
                   <Clock className="w-5 h-5 text-rose-400" />
-                  Horários para <span className="capitalize">{formatDateLabel(selectedDate).split('-')[0]}</span>
+                  Agendamento para <span className="capitalize">{formatDateLabel(selectedDate).split('-')[0]}</span>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-3">
-                  {getTimesForDate(selectedDate).map(time => (
-                    <button
-                      key={time}
-                      onClick={() => setSelectedTime(time)}
-                      className={`p-3 rounded-xl font-medium transition-all ${
-                        selectedTime === time
-                          ? 'bg-rose-400 text-white shadow-lg scale-105'
-                          : 'bg-white text-gray-700 hover:bg-rose-100 border border-gray-200'
-                      }`}
-                    >
-                      {time}
-                    </button>
-                  ))}
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-gray-700">1. Escolha o Serviço</label>
+                  <select
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
+                    className="w-full p-3 rounded-xl border border-gray-200 bg-white text-gray-700 focus:ring-2 focus:ring-rose-400 focus:border-transparent outline-none transition-all cursor-pointer shadow-sm"
+                  >
+                    <option value="" disabled>Selecione um serviço...</option>
+                    {servicesList.map(service => (
+                      <option key={service} value={service}>{service}</option>
+                    ))}
+                  </select>
                 </div>
 
-                {selectedTime && (
+                {selectedService && (
+                  <div className="space-y-2 animate-in fade-in duration-300">
+                    <label className="block text-sm font-semibold text-gray-700">2. Escolha o Horário</label>
+                    <div className="grid grid-cols-2 gap-3">
+                      {getTimesForDate(selectedDate).map(time => (
+                        <button
+                          key={time}
+                          onClick={() => setSelectedTime(time)}
+                          className={`p-3 rounded-xl font-medium transition-all ${
+                            selectedTime === time
+                              ? 'bg-rose-400 text-white shadow-lg scale-105'
+                              : 'bg-white text-gray-700 hover:bg-rose-100 border border-gray-200'
+                          }`}
+                        >
+                          {time}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {selectedService && selectedTime && (
                   <button
                     onClick={handleConfirm}
-                    className="w-full mt-8 bg-gradient-to-r from-rose-400 to-amber-500 hover:from-rose-500 hover:to-amber-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2"
+                    className="w-full mt-8 bg-gradient-to-r from-rose-400 to-amber-500 hover:from-rose-500 hover:to-amber-600 text-white font-bold py-4 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 animate-in fade-in slide-in-from-bottom-4 duration-300"
                   >
                     <Send className="w-5 h-5" />
                     Confirmar no WhatsApp
