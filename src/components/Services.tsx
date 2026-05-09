@@ -15,14 +15,14 @@ export default function Services() {
       color: 'from-amber-400 to-amber-500'
     },
     {
-      icon: Baby,
-      title: 'Orientação Familiar',
-      description: 'Apoio e orientação para famílias que buscam melhorar a comunicação, resolver conflitos e fortalecer os laços afetivos entre seus membros.',
+      icon: MessageCircle,
+      title: 'Escuta Terapêutica',
+      description: 'Um espaço seguro, sigiloso e livre de julgamentos para você compartilhar suas emoções. A Escuta Terapêutica promove alívio emocional, ajuda a organizar os pensamentos e oferece apoio em momentos de angústia ou dúvida, fortalecendo seu autoconhecimento.',
       color: 'from-green-500 to-green-600'
     },
     {
       icon: Smile,
-      title: 'Grupos de Apoio',
+      title: 'Grupos Terapêuticos',
       description: 'Encontros temáticos para pessoas que enfrentam desafios semelhantes, promovendo acolhimento mútuo, aprendizado coletivo e transformação.',
       color: 'from-pink-400 to-pink-600'
     }

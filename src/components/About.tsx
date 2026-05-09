@@ -8,16 +8,13 @@ export default function About() {
   const professionals = [
     {
       id: 1,
-      name: "Maria Iracelma Santos",
+      name: "Maria Iracelma",
       roles: "Assistente Social | Especialista em Saúde Coletiva | Terapeuta Comunitária | Auriculoterapeuta",
-      image: "/proimage.jpeg",
+      image: "/image2.jpeg",
       resume: [
-        "Profissional da área da saúde com experiência em Práticas Integrativas e Complementares, atuando na promoção do bem-estar físico, emocional e espiritual por meio de abordagens que valorizam o cuidado integral do ser humano. Desenvolve atividades terapêuticas voltadas à escuta, acolhimento e fortalecimento dos vínculos comunitários, com foco na Terapia Comunitária Integrativa, auriculoterapia, meditação, relaxamento guiado e práticas de autocuidado.",
-        "Com trajetória dedicada à humanização do cuidado e à saúde coletiva, integra saberes tradicionais e científicos, estimulando o protagonismo do indivíduo no próprio processo de cura. Atua com grupos comunitários, população em situação de rua, adolescentes e empresas, promovendo espaços de partilha, reflexão e integração corpo-mente-espírito."
-      ],
-      mission: [
-        "Promover o bem-estar integral das pessoas por meio de práticas terapêuticas e integrativas, fortalecendo o autocuidado, os vínculos humanos e o sentido de pertencimento através do afeto e da escuta.",
-        "Ser reconhecido como um espaço de referência em acolhimento e promoção de saúde integral, inspirando pessoas e comunidades a florescerem emocionalmente e espiritualmente por meio do encontro humano e da consciência afetiva."
+        "Profissional com experiência em práticas integrativas e idealizadora do projeto Florescer Integrativo. Desenvolvo ações voltadas ao acolhimento, escuta sensível e fortalecimento emocional, promovendo espaços de cuidado, partilha e conexão humana.",
+        "Minha atuação integra práticas terapêuticas, dinâmicas em grupo, meditação, relaxamento e atividades voltadas ao bem-estar físico, emocional e social, especialmente com idosos, mulheres, profissionais da saúde e comunidade em geral.",
+        "Acredito no afeto como ferramenta de transformação e no encontro como caminho para fortalecer vínculos, resgatar a autoestima e cultivar saúde integral."
       ]
     }
   ];
@@ -152,15 +149,7 @@ export default function About() {
                       ))}
                     </div>
 
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-800 mb-5 flex items-center gap-3">
-                        <span className="w-10 h-10 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center text-lg">✦</span>
-                        Minha Missão
-                      </h3>
-                      {pro.mission.map((paragraph, idx) => (
-                        <p key={idx} className="text-gray-600 leading-relaxed mb-4 text-justify">{paragraph}</p>
-                      ))}
-                    </div>
+
                   </div>
                 </div>
               </div>

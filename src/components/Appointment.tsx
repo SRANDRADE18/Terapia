@@ -17,8 +17,8 @@ export default function Appointment() {
   const servicesList = [
     'Auriculoterapia',
     'Terapia Comunitária Integrativa',
-    'Orientação Familiar',
-    'Grupos de Apoio'
+    'Escuta Terapêutica',
+    'Grupos Terapêuticos'
   ];
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [loading, setLoading] = useState(false);

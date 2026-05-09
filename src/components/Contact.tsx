@@ -68,7 +68,7 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="https://instagram.com/terapiacomunitaria"
+                href="https://www.instagram.com/florescerintegrativo_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl hover:from-purple-100 hover:to-pink-100 transition-colors group"
@@ -78,12 +78,12 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Instagram</h4>
-                  <p className="text-sm text-gray-600">@terapiacomunitaria</p>
+                  <p className="text-sm text-gray-600">@florescerintegrativo_</p>
                 </div>
               </a>
 
               <a
-                href="https://facebook.com/terapiacomunitaria"
+                href="https://www.facebook.com/FlorescerIntegrativo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors group"
@@ -93,7 +93,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Facebook</h4>
-                  <p className="text-sm text-gray-600">Terapia Comunitária Integrativa</p>
+                  <p className="text-sm text-gray-600">Florescer Integrativo</p>
                 </div>
               </a>
 
