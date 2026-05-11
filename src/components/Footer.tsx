@@ -18,8 +18,8 @@ export default function Footer() {
               (11) 98031-7304
             </a>
             <span className="text-gray-600">•</span>
-            <a href="mailto:contato@terapiacomunitaria.com.br" className="text-gray-300 hover:text-rose-400 transition-colors">
-              contato@terapiacomunitaria.com.br
+            <a href="mailto:florescerintegrativo1@gmail.com" className="text-gray-300 hover:text-rose-400 transition-colors">
+              florescerintegrativo1@gmail.com
             </a>
           </div>
 

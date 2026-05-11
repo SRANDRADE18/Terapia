@@ -1,4 +1,4 @@
-import { MessageCircle, Users2, Baby, Smile, Ear } from 'lucide-react';
+import { MessageCircle, Users2, Smile, Ear } from 'lucide-react';
 
 export default function Services() {
   const services = [

@@ -37,15 +37,19 @@ export default function Contact() {
                 </div>
               </a>
 
-              <div className="flex items-start gap-4 p-4 bg-amber-50 rounded-xl">
-                <div className="flex-shrink-0 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center">
+              <a 
+                href="mailto:florescerintegrativo1@gmail.com"
+                className="flex items-start gap-4 p-4 bg-amber-50 rounded-xl hover:bg-amber-100 transition-colors group"
+              >
+                <div className="flex-shrink-0 w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 mb-1">E-mail</h4>
-                  <p className="text-gray-600">contato@terapiacomunitaria.com.br</p>
+                  <p className="text-gray-600">florescerintegrativo1@gmail.com</p>
+                  <p className="text-sm text-amber-600 mt-1">Clique para enviar um e-mail</p>
                 </div>
-              </div>
+              </a>
 
               <div className="flex items-start gap-4 p-4 bg-green-50 rounded-xl">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">

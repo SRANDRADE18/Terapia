@@ -25,8 +25,9 @@ export default function Login() {
       if (data.user) {
         navigate('/admin');
       }
-    } catch (err: any) {
-      setError(err.message === 'Invalid login credentials' 
+    } catch (err) {
+      const error = err as Error;
+      setError(error.message === 'Invalid login credentials' 
         ? 'E-mail ou senha incorretos' 
         : 'Erro ao fazer login. Verifique se a conta existe.');
     } finally {

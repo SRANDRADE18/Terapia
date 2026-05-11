@@ -16,6 +16,7 @@ export const supabase = (supabaseUrl && supabaseAnonKey)
           })
         })
       })
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } as any);
 
 if (!supabaseUrl || !supabaseAnonKey) {

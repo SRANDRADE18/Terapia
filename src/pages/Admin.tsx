@@ -16,11 +16,13 @@ export default function Admin() {
   const [loading, setLoading] = useState(true);
   const [newDate, setNewDate] = useState('');
   const [newTime, setNewTime] = useState('');
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
 
   useEffect(() => {
     checkUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const checkUser = async () => {
