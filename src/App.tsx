@@ -6,6 +6,7 @@ import Appointment from './components/Appointment';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <SpeedInsights />
     </div>
   );
 }
