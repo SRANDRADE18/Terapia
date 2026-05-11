@@ -72,7 +72,7 @@ export default function Contact() {
 
             <div className="space-y-4">
               <a
-                href="https://www.instagram.com/florescerintegrativo_/"
+                href="https://www.instagram.com/florescerintegrativo1/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl hover:from-purple-100 hover:to-pink-100 transition-colors group"

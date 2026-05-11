@@ -21,16 +21,16 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2 lg:gap-3 group"
+            className="flex items-center gap-2 lg:gap-3 group min-w-0 flex-1"
           >
             <img
               src="/image.png"
               alt="Florescer Integrativo"
-              className="h-10 md:h-12 lg:h-16 w-auto group-hover:scale-105 transition-transform"
+              className="h-10 md:h-12 lg:h-16 w-auto flex-shrink-0 group-hover:scale-105 transition-transform"
             />
-            <div className="text-left flex flex-col">
-              <h1 className="text-sm md:text-base lg:text-lg font-bold text-gray-800 leading-tight">Florescer Integrativo</h1>
-              <p className="text-[10px] lg:text-xs text-gray-600 hidden md:block">Terapia Comunitária Integrativa</p>
+            <div className="text-left flex flex-col min-w-0">
+              <h1 className="text-[13px] sm:text-sm md:text-base lg:text-lg font-bold text-gray-800 leading-tight truncate">Florescer Integrativo</h1>
+              <p className="text-[10px] lg:text-xs text-gray-600 hidden md:block truncate">Terapia Comunitária Integrativa</p>
             </div>
           </button>
 
@@ -54,9 +54,9 @@ export default function Header() {
           {/* Botão Agendar */}
           <button
             onClick={() => scrollToSection('agendamento')}
-            className="flex items-center gap-1.5 lg:gap-2 bg-rose-400 hover:bg-rose-500 text-white font-semibold px-4 py-2 lg:px-6 lg:py-2 rounded-full transition-all transform hover:scale-105 text-xs lg:text-base"
+            className="flex-shrink-0 flex items-center gap-1 lg:gap-2 bg-rose-400 hover:bg-rose-500 text-white font-semibold px-3 py-2 lg:px-6 lg:py-2 rounded-full transition-all transform hover:scale-105 text-xs lg:text-base ml-2"
           >
-            <Calendar className="w-4 h-4 lg:w-5 lg:h-5" />
+            <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
             <span className="hidden sm:inline">Agendar</span>
             <span className="hidden lg:inline"> Avaliação</span>
             <span className="sm:hidden">Agendar</span>
