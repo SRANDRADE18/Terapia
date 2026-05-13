@@ -82,7 +82,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800">Instagram</h4>
-                  <p className="text-sm text-gray-600">@florescerintegrativo_</p>
+                  <p className="text-sm text-gray-600">@florescerintegrativo1</p>
                 </div>
               </a>
 
