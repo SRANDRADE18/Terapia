@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Users, Target, Sparkles, X } from "lucide-react";
+import { Users, Target, Sparkles, X, Heart, Users as UsersIcon, Leaf } from "lucide-react";
 
 export default function About() {
   const [selectedPro, setSelectedPro] = useState<number | null>(null);
@@ -20,12 +20,79 @@ export default function About() {
   ];
 
   return (
-    <section id="sobre" className="py-16 px-4 bg-gray-50 relative">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Profissionais
-          </h2>
+    <>
+      <section id="sobre" className="py-16 px-4 bg-white relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Sobre o Projeto
+            </h2>
+            <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="bg-rose-50 rounded-3xl p-8 md:p-12 shadow-sm text-gray-700 leading-relaxed space-y-6">
+            <p className="text-lg font-medium">
+              O <strong className="text-rose-600">Florescer Integrativo</strong> é um projeto voltado ao acolhimento, à promoção da saúde emocional e ao fortalecimento de vínculos por meio de práticas integrativas e comunitárias.
+            </p>
+            <p>
+              Com uma proposta humanizada e acolhedora, o projeto busca oferecer espaços de escuta, partilha e cuidado, incentivando o desenvolvimento do autocuidado, da autoestima e do bem-estar emocional em diferentes fases da vida.
+            </p>
+            <p>
+              As atividades são realizadas de forma individual e em grupo, utilizando recursos terapêuticos integrativos que favorecem o equilíbrio emocional, o fortalecimento das relações e a valorização das experiências de vida de cada participante.
+            </p>
+            
+            <div className="mt-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">Entre as práticas desenvolvidas estão:</h3>
+              <ul className="grid md:grid-cols-2 gap-3">
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Terapia Comunitária Integrativa (TCI)</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Rodas de conversa e acolhimento</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Dinâmicas terapêuticas</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Práticas de relaxamento e autocuidado</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Auriculoterapia</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Escalda-pés terapêutico</li>
+                <li className="flex items-center gap-2"><Sparkles className="w-5 h-5 text-rose-400 flex-shrink-0" /> Atividades de fortalecimento emocional e social</li>
+              </ul>
+            </div>
+            
+            <p className="mt-6 italic border-l-4 border-rose-300 pl-4 py-2">
+              O projeto acredita no cuidado construído através da escuta, do respeito e da conexão humana, promovendo encontros que acolhem histórias, emoções e trajetórias de vida com sensibilidade e empatia.
+            </p>
+
+            <div className="grid md:grid-cols-3 gap-6 mt-10">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <Target className="w-8 h-8 text-amber-500 mb-4" />
+                <h4 className="font-bold text-lg mb-2">Missão</h4>
+                <p className="text-sm">Promover acolhimento, cuidado emocional e fortalecimento de vínculos por meio de práticas integrativas e comunitárias acessíveis e humanizadas.</p>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <Leaf className="w-8 h-8 text-green-500 mb-4" />
+                <h4 className="font-bold text-lg mb-2">Visão</h4>
+                <p className="text-sm">Ser um espaço de referência em acolhimento integrativo, contribuindo para a promoção da saúde emocional, da convivência comunitária e do bem-estar coletivo.</p>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                <Heart className="w-8 h-8 text-rose-500 mb-4" />
+                <h4 className="font-bold text-lg mb-2">Valores</h4>
+                <p className="text-sm">Acolhimento, empatia, escuta ativa, respeito à singularidade, cuidado humanizado, fortalecimento comunitário e promoção da saúde integral.</p>
+              </div>
+            </div>
+
+            <div className="mt-8 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row items-center md:items-start gap-4">
+              <UsersIcon className="w-10 h-10 text-blue-500 flex-shrink-0" />
+              <div className="text-center md:text-left">
+                <h4 className="font-bold text-lg mb-1">Público Atendido</h4>
+                <p className="text-sm">O projeto atende adolescentes, adultos, idosos, famílias, grupos comunitários e organizações, oferecendo práticas integrativas, rodas de conversa, ações de cuidado emocional e fortalecimento das relações interpessoais, contribuindo para ambientes mais saudáveis, humanizados e alinhados às diretrizes de saúde emocional e prevenção de riscos psicossociais.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="profissionais" className="py-16 px-4 bg-gray-50 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+              Profissionais
+            </h2>
           <div className="w-20 h-1 bg-rose-400 mx-auto rounded-full"></div>
           <p className="text-gray-600 mt-6 max-w-2xl mx-auto">
             Conheça a equipe dedicada a promover seu bem-estar físico, emocional e espiritual.
@@ -157,7 +224,8 @@ export default function About() {
           </div>
         </div>
       )}
-    </section>
+      </section>
+    </>
   );
 }
 

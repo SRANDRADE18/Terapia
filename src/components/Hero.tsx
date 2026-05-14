@@ -23,8 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Um espaço acolhedor dedicado ao cuidado emocional e ao bem-estar da comunidade.
-            Aqui você encontra escuta empática, apoio genuíno e ferramentas para transformar sua vida.
+            Um espaço de acolhimento, escuta e cuidado, voltado à promoção do bem-estar emocional, do fortalecimento pessoal e das conexões humanas, por meio de práticas integrativas e experiências que favorecem o equilíbrio e a qualidade de vida.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -32,7 +31,7 @@ export default function Hero() {
               onClick={() => scrollToSection('agendamento')}
               className="bg-rose-400 hover:bg-rose-500 text-white font-semibold px-8 py-4 rounded-full shadow-lg transition-all transform hover:scale-105"
             >
-              Agendar Consulta
+              Agendar Atendimento
             </button>
             <button
               onClick={() => scrollToSection('sobre')}

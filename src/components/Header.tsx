@@ -1,4 +1,4 @@
-import { Info, Sparkles, Calendar, MessageCircle } from 'lucide-react';
+import { Info, Sparkles, Calendar, MessageCircle, Users } from 'lucide-react';
 
 export default function Header() {
   const scrollToSection = (id: string) => {
@@ -8,6 +8,7 @@ export default function Header() {
 
   const menuItems = [
     { id: 'sobre', label: 'Sobre', icon: Info },
+    { id: 'profissionais', label: 'Profissionais', icon: Users },
     { id: 'servicos', label: 'Serviços', icon: Sparkles },
     { id: 'agendamento', label: 'Agendar', icon: Calendar },
     { id: 'contato', label: 'Contato', icon: MessageCircle }
@@ -61,7 +62,7 @@ export default function Header() {
             >
               <Calendar className="w-3.5 h-3.5 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
               <span className="hidden sm:inline">Agendar</span>
-              <span className="hidden lg:inline"> Avaliação</span>
+              <span className="hidden lg:inline"> Atendimento</span>
               <span className="sm:hidden">Agendar</span>
             </button>
           </div>
