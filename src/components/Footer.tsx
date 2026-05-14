@@ -30,6 +30,9 @@ export default function Footer() {
             <p className="text-xs text-gray-500 mt-2">
               Atendimento presencial e online • São Paulo, SP
             </p>
+            <p className="text-xs text-gray-600 mt-4">
+              Desenvolvido por <a href="https://www.linkedin.com/in/matheus-dos-santos-andrade-6b71aa213/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-rose-400 transition-colors">Matheus dos Santos Andrade</a>
+            </p>
           </div>
         </div>
       </div>
